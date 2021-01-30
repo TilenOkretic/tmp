@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okretic, Krmelj in Partnerji</title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-3">Neli Okretič</h1>
+        <p class="lead">Resitev za vse vase resne in manj resne probleme ? Mogoce pa res.</p>
+        <p class="lead">Moto: " Vzgimo zeleno luc "</p>
+        <div class="wrapper">
+            <img class="w-25" id="mi" src="https://www.jadek-pensa.si/wp-content/uploads/2018/04/JadekPensa_Neli_Okretic_1080x1080-768x768.jpg" alt="">
+        </div>
+        <hr class="my-4">
+        <p>Gospodicna, bolje znana kot "Velika Tuta", bo vam resila vse vase probleme in bo dala zeleno luc vasim sanjam. </p>
+        <p class="lead">
+          <a id="btn" class="btn btn-primary btn-lg" href="#" role="button">Zanima me vec!</a>
+        </p>
+        <div class="extra invisible">
+        </div>
+    </div>
+
+    
+    
+</body>
+
+<script>
+    let btn = document.getElementById("btn");
+    let extra = document.getElementsByClassName("extra")[0];
+    let img = document.getElementById("mi");
+
+    btn.onclick = () =>{
+        extra.className = "extra visible";
+        let p = document.createElement("p");
+        p.innerHTML = "5 razlogov zakaj si zelite poslovati z Neli Okretic:";
+        extra.appendChild(p)
+    
+        let ul = document.createElement("ol");
+        let l1 = document.createElement("li");
+        l1.innerHTML = "Ima lepa ocala, ki ji zelo pasajo";
+        let l2 = document.createElement("li");
+        l2.innerHTML = "Ker je Velika Tuta zmeraj poskbi za Malo Tuto";
+        let l3 = document.createElement("li");
+        l3.innerHTML = "Zelo pridno dela brez se ustavit";
+        let l4 = document.createElement("li");
+        l4.innerHTML = "Je mala siklca zato ji nuben ne gre kontra";
+        let l5 = document.createElement("li");
+        l5.innerHTML = "Ima zelo rada svojega bratca, ceprav ji ta vedno samo nagaja";
+        let l6 = document.createElement("li");
+        l6.innerHTML = "BONUS: Krmelj je njen splosen partner, ki poskrbi za resnost in za hec v vseh situacijah. Vcasih 'spelje' tudi ob 'rdeci' luci 😉😉";
+
+        ul.appendChild(l1);
+        ul.appendChild(l2);
+        ul.appendChild(l3);
+        ul.appendChild(l4);
+        ul.appendChild(l5);
+        ul.appendChild(l6);
+    
+        extra.appendChild(ul);
+        
+        let i = 0;
+        setInterval(function(){ 
+
+            if(i == 0) {
+                img.src = "https://www.jadek-pensa.si/wp-content/uploads/2018/04/JadekPensa_Neli_Okretic_1080x1080-768x768.jpg";
+        
+            } else if( i > 3){
+                i = -1;
+            } else {
+                img.src = `assets/neli${i}.jpg`;
+            }
+            i++;
+        }, 2000);
+
+
+        btn.remove();
+    }
+</script>
+</html>
